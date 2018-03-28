@@ -1,0 +1,210 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="main.js"></script>
+    <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+#login {
+    margin : auto;
+    width: 50%;
+}
+
+    </style>    
+</head>
+<body>
+    <div ng-controller="myCtrl">
+        Employee Reimbursement System
+        <button ng-show="loginboolean" ng-click="logout()"> logout </button>
+        <div id = "login" ng-hide="loginboolean">
+            <form>
+            <input type="text" name="username" ng-model="user.username"><br>
+            <input type="password" name="password" ng-model="user.password"><br>
+            <input type="submit" value="Submit" ng-click="loginclick()">
+            </form>
+            {{message}}
+        </div>
+        
+        <div ng-if="users.userroleid == 1">
+
+            <button ng-click="eprclick()"> Past Reimbursements </button>
+            <button ng-click="epclick()"> Pending Reimbursements </button>
+            <button ng-click="esclick()"> Submit a Reimbursement </button>
+            
+            <div ng-show="employeepastreimburst">
+                    <table>
+                        <tr>   
+                            <th>Amount</th>
+                            <th>Author First Name</th>
+                            <th>Author Last Name</th>
+                            <th>Time Resolved</th>
+                            <th>Resolver First Name</th>
+                            <th>Resolver Last Name</th>
+                            <th>Status</th>
+                            <th>Submitted</th>
+                            <th>Type</th>
+                        </tr>
+                        <tr ng-repeat="reimbursement in reimbursements | filter:isemployee">
+                            <td> {{reimbursement.amount}}</td>
+                            <td> {{reimbursement.author_first_name}} </td>
+                            <td> {{reimbursement.author_last_name}}</td>
+                            <td> {{reimbursement.resolved}}</td>
+                            <td> {{reimbursement.resolver_first_name}}</td>
+                            <td> {{reimbursement.resolver_last_name}} </td>
+                            <td> {{reimbursement.status_name}}</td>
+                            <td> {{reimbursement.submitted}}</td>
+                            <td> {{reimbursement.type_name}}</td>
+                        </tr>                                
+                    </table>
+                        
+            </div>
+            <div ng-show="employeepending">
+                    <table>
+                            <tr>   
+                                <th>Amount</th>
+                                <th>Author First Name</th>
+                                <th>Author Last Name</th>
+                                <th>Time Resolved</th>
+                                <th>Resolver First Name</th>
+                                <th>Resolver Last Name</th>
+                                <th>Status</th>
+                                <th>Submitted</th>
+                                <th>Type</th>
+                            </tr>
+                            <tr ng-repeat="reimbursement in reimbursements | filter:isemployeepending">
+                                <td> {{reimbursement.amount}}</td>
+                                <td> {{reimbursement.author_first_name}} </td>
+                                <td> {{reimbursement.author_last_name}}</td>
+                                <td> {{reimbursement.resolved}}</td>
+                                <td> {{reimbursement.resolver_first_name}}</td>
+                                <td> {{reimbursement.resolver_last_name}} </td>
+                                <td> {{reimbursement.status_name}}</td>
+                                <td> {{reimbursement.submitted}}</td>
+                                <td> {{reimbursement.type_name}}</td>
+                            </tr>                                
+                        </table>
+                
+            </div>        
+            <div id ="login" ng-show="employeesubmit">
+                    <form>
+            
+                        <input type="number" name="amount" ng-model="reimbursement.amount"><br>
+                        <textarea name="description" ng-model="reimbursement.description"></textarea><br>
+                        <select ng-model="selected_type" 
+                            ng-options="Type as Type.label for Type in Types">
+                        </select>
+                        
+                        <button ng-click="onclick(selected_type)"> Submit </button>
+                    </form>
+                    
+                
+            </div>    
+        </div>    
+    
+        <div ng-if="users.userroleid == 2">
+                <button ng-click="fpastclick()"> Past Reimbursements </button>
+                <button ng-click="fpendingclick()"> Pending Reimbursements </button>
+                <button ng-click="fsubmitclick()"> Submit a Reimbursement </button>
+            
+            
+            <div ng-show="financepast">
+                        <table>
+                                <tr>   
+                                    <th>Amount</th>
+                                    <th>Author First Name</th>
+                                    <th>Author Last Name</th>
+                                    <th>Time Resolved</th>
+                                    <th>Resolver First Name</th>
+                                    <th>Resolver Last Name</th>
+                                    <th>Status</th>
+                                    <th>Submitted</th>
+                                    <th>Type</th>
+                                    <th>Filter</th>
+                                </tr>
+                            
+                                <tr ng-repeat="reimbursement in reimbursements ">
+                                    <td> {{reimbursement.amount}}</td>
+                                    <td> {{reimbursement.author_first_name}} </td>
+                                    <td> {{reimbursement.author_last_name}}</td>
+                                    <td> {{reimbursement.resolved}}</td>
+                                    <td> {{reimbursement.resolver_first_name}}</td>
+                                    <td> {{reimbursement.resolver_last_name}} </td>
+                                    <td> {{reimbursement.status_name}}</td>
+                                    <td> {{reimbursement.submitted}}</td>
+                                    <td> {{reimbursement.type_name}}</td>
+                                </tr>                                
+                            </table>    
+                    
+                </div>
+                <div ng-show="financepending">
+                        <table>
+                                <tr>   
+                                    <th>Amount</th>
+                                    <th>Author First Name</th>
+                                    <th>Author Last Name</th>
+                                    <th>Time Resolved</th>
+                                    <th>Resolver First Name</th>
+                                    <th>Resolver Last Name</th>
+                                    <th>Status</th>
+                                    <th>Submitted</th>
+                                    <th>Type</th>
+                                    <th>Approve/Deny</th>
+                                </tr>
+                                <tr ng-repeat="reimbursement in reimbursements | filter:isfinance ">
+                                    <td> {{reimbursement.amount}}</td>
+                                    <td> {{reimbursement.author_first_name}} </td>
+                                    <td> {{reimbursement.author_last_name}}</td>
+                                    <td> {{reimbursement.resolved}}</td>
+                                    <td> {{reimbursement.resolver_first_name}}</td>
+                                    <td> {{reimbursement.resolver_last_name}} </td>
+                                    <td> {{reimbursement.status_name}}</td>
+                                    <td> {{reimbursement.submitted}}</td>
+                                    <td> {{reimbursement.type_name}}</td>
+                                    <span ng-if="reimbursement.author !== users.userid">
+                                    <td>  <select ng-model="selected_choice" 
+                                        ng-options="Choice as Choice.label for Choice in Choices">
+                                    </select>  </td>
+                                    <td> <button ng-click="update(reimbursement,selected_choice)"> Submit </button>  </td></span>
+                                </tr>                                
+                            </table>    
+                    
+                </div>         
+                <div id ="login "ng-show="financesubmit">
+                        <form>
+                                
+                            <input type="number" name="amount" ng-model="reimbursement.amount"><br>
+                            <textarea name="description" ng-model="reimbursement.description"></textarea><br>
+                            <select ng-model="selected_type" 
+                                ng-options="Type as Type.label for Type in Types">
+                            </select>
+                            
+                            <button ng-click="onclick(selected_type)"> Submit </button>
+                        </form>
+                        {{message}}    
+                </div>    
+
+
+
+
+        </div>
+
+
+    
+    
+    </div>
+</body>
+</html>

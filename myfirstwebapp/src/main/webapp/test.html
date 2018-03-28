@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Angular Expressions and Directives</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <style>
+            body{
+                font-size: 26px;
+                margin: 0;
+                padding: 0;
+
+            }
+            .container{
+                margin: 0 auto;
+                width: 50%;
+            }
+        </style>
+    </head>
+    <body ng-app="myApp" >
+        <script>
+        var app = angular.module("myApp", []);
+        app.controller('myCtrl', function($scope, $http) {
+            $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded; charset=utf-8";
+            $scope.sendPost = function() {
+
+                    var user = {"userid": "0",
+                                "username": $scope.name,
+                                "firstname" : "",
+                                "lastname" : "",
+                                "email" : "",
+                                "userroleid" : "0"}
+
+                       return $http({
+                            method : 'POST',
+                            url : 'http://localhost:8085/mfw/hello',
+                            contentType: 'application/json',
+                            data : JSON.stringify(user) })
+                            .then(function(response) {
+                                $scope.message = response.data},null)
+                            
+                        }
+            })
+        </script>
+        {{5 + 5}}
+        <div ng-controller="myCtrl">
+                <form ng-submit="sendPost()">
+                        <input ng-model="name" />
+                    <button type="submit">Send</button>
+                </form>
+                <p>Message from servlet: {{message[0].id}}
+            </div>
+    </body>
+
+
+
+
+
+
+
+</html>
+
+

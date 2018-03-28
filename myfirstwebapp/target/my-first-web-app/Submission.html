@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="submain.js"></script>
+</head>
+<body>
+    <div ng-controller="myCtrl">
+        <form>
+
+            <input type="number" name="amount" ng-model="reimbursement.amount"><br>
+            <textarea name="description" ng-model="reimbursement.description"></textarea><br>
+            <input type="file" name="pic" accept="image/*" ng-model="reimbursement.receipt_string">
+            <select ng-model="selected_type" 
+                ng-options="Type as Type.label for Type in Types">
+            </select>
+            
+            <button ng-click="onclick()"> Submit </button>
+        </form>
+            <p>Message from servlet: {{message}} </p>
+        {{name}} {{reimbursement.receipt}} {{selected_type.value}}
+        <img ng-src={{message}} alt="Home page" >
+    </div>
+</body>
+</html>

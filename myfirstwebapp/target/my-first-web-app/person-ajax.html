@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="">
+            Name
+            <input id="name" type="text">
+        </label>
+        <br/>
+        <label for="">
+            Age
+            <input id="age" type="number" min="0" max="120" step="1">
+        </label>
+        <button type="submit" id="submit-person">Submit</button>
+    </form>
+
+    <div id="ajax-container">
+
+    </div>
+    <img src="Spinner.gif" alt="">
+    <script>
+        /*
+            AJAX how to:
+            1 create an XmlHttpRequest
+            2 Define an event handler for ready state change
+            3 open request
+            4 send it
+
+            Ready States
+            0 request not initialized
+            1 server connection established
+            2 request received
+            3 processing request
+            4 request finished/response ready
+        */
+        document.querySelector("#submit-person")
+            .addEventListener("click", function(evt){
+            
+                var person = {
+                    "name" : document.querySelector("#name").value,
+                    "age": document.querySelector("#age").value 
+                }
+                evt.preventDefault();
+
+                //create XmlHttpRequest
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4){
+                        if(xhr.status == 200){
+                            console.log(xhr.responseText);
+                            document.querySelector("#ajax-container")
+                                .innerHTML = xhr.responseText;
+                        }
+                    }
+                }
+
+                xhr.open("POST", "http://localhost:8085/mfw/json");
+                xhr.send(JSON.stringify(person));
+            });
+    </script>
+</body>
+
+</html>

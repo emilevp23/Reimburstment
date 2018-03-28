@@ -1,0 +1,56 @@
+
+2017-08-24 15:31:10 TRACE root:22 - creating ConnectionUtil singleton
+2017-08-24 15:31:10 TRACE root:24 - properties file is {}
+2017-08-24 15:31:10 TRACE root:26 - jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL
+2017-08-24 15:31:10 DEBUG root:41 - Attempting to get connection to DB
+2017-08-24 15:31:10 TRACE root:43 -  {url=jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL, driver=oracle.jdbc.driver.OracleDriver, pwd=p4ssw0rd, usr=ERS}
+2017-08-24 15:31:12 TRACE root:19 - Reimbursement Status 
+2017-08-24 15:36:50 TRACE root:22 - creating ConnectionUtil singleton
+2017-08-24 15:36:50 TRACE root:24 - properties file is {}
+2017-08-24 15:36:50 TRACE root:26 - jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL
+2017-08-24 15:36:50 DEBUG root:41 - Attempting to get connection to DB
+2017-08-24 15:36:50 TRACE root:43 -  {url=jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL, driver=oracle.jdbc.driver.OracleDriver, pwd=p4ssw0rd, usr=ERS}
+2017-08-24 15:36:51 TRACE root:19 - Reimbursement Status 
+2017-08-24 15:36:52 TRACE root:24 - Excute the result set 
+2017-08-24 15:41:29 TRACE root:22 - creating ConnectionUtil singleton
+2017-08-24 15:41:29 TRACE root:24 - properties file is {}
+2017-08-24 15:41:29 TRACE root:26 - jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL
+2017-08-24 15:41:29 DEBUG root:41 - Attempting to get connection to DB
+2017-08-24 15:41:29 TRACE root:43 -  {url=jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL, driver=oracle.jdbc.driver.OracleDriver, pwd=p4ssw0rd, usr=ERS}
+2017-08-24 15:41:30 TRACE root:19 - Reimbursement Status 
+2017-08-24 15:41:31 TRACE root:24 - Excute the result set 
+2017-08-24 15:42:27 TRACE root:22 - creating ConnectionUtil singleton
+2017-08-24 15:42:27 TRACE root:24 - properties file is {}
+2017-08-24 15:42:27 TRACE root:26 - jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL
+2017-08-24 15:42:27 DEBUG root:41 - Attempting to get connection to DB
+2017-08-24 15:42:27 TRACE root:43 -  {url=jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL, driver=oracle.jdbc.driver.OracleDriver, pwd=p4ssw0rd, usr=ERS}
+2017-08-24 15:42:28 TRACE root:19 - Reimbursement Status 
+2017-08-24 15:43:22 TRACE root:22 - creating ConnectionUtil singleton
+2017-08-24 15:43:22 TRACE root:24 - properties file is {}
+2017-08-24 15:43:22 TRACE root:26 - jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL
+2017-08-24 15:43:22 DEBUG root:41 - Attempting to get connection to DB
+2017-08-24 15:43:22 TRACE root:43 -  {url=jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL, driver=oracle.jdbc.driver.OracleDriver, pwd=p4ssw0rd, usr=ERS}
+2017-08-24 15:43:25 TRACE root:19 - Reimbursement Status 
+2017-08-24 15:43:25 TRACE root:24 - Excute the result set 
+2017-08-24 15:49:15 TRACE root:22 - creating ConnectionUtil singleton
+2017-08-24 15:49:15 TRACE root:24 - properties file is {}
+2017-08-24 15:49:15 TRACE root:26 - jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL
+2017-08-24 15:49:15 DEBUG root:41 - Attempting to get connection to DB
+2017-08-24 15:49:15 TRACE root:43 -  {url=jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL, driver=oracle.jdbc.driver.OracleDriver, pwd=p4ssw0rd, usr=ERS}
+2017-08-24 15:49:18 TRACE root:19 - Reimbursement Status 
+2017-08-24 15:49:18 TRACE root:24 - Excute the result set 
+2017-08-24 15:49:18 TRACE root:28 - Reimbursement Status 
+2017-08-24 15:52:51 TRACE root:22 - creating ConnectionUtil singleton
+2017-08-24 15:52:51 TRACE root:24 - properties file is {}
+2017-08-24 15:52:51 TRACE root:26 - jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL
+2017-08-24 15:52:51 DEBUG root:41 - Attempting to get connection to DB
+2017-08-24 15:52:51 TRACE root:43 -  {url=jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL, driver=oracle.jdbc.driver.OracleDriver, pwd=p4ssw0rd, usr=ERS}
+2017-08-24 15:52:54 TRACE root:19 - Reimbursement Status 
+2017-08-24 15:52:55 TRACE root:24 - Excute the result set 
+2017-08-24 15:52:55 TRACE root:28 - Reimbursement Status 
+2017-08-24 15:52:55 DEBUG root:41 - Attempting to get connection to DB
+2017-08-24 15:52:55 TRACE root:43 -  {url=jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL, driver=oracle.jdbc.driver.OracleDriver, pwd=p4ssw0rd, usr=ERS}
+2017-08-24 15:52:55 TRACE root:19 - Reimbursement Type 
+2017-08-24 15:52:55 DEBUG root:41 - Attempting to get connection to DB
+2017-08-24 15:52:55 TRACE root:43 -  {url=jdbc:oracle:thin:@orcl.cir99wtfgah8.us-east-2.rds.amazonaws.com:1521:ORCL, driver=oracle.jdbc.driver.OracleDriver, pwd=p4ssw0rd, usr=ERS}
+2017-08-24 15:52:55 TRACE root:19 - User Role 
